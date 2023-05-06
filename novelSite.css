@@ -240,9 +240,9 @@ body {
         width: 80%;
     }
 }
-@media (max-width: 425px) {
+@media (max-width: 320px) {
     .novel-container {
-        grid-template-columns: 150px 150px;
+        grid-template-columns: 145px 145px;
     }
     .container-novel {
         height: 500vh;
