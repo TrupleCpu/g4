@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="novelSite.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/251144cd57.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div class="container-novel">
+         <div class="header">
+            <div class="left-container">
+              <div class="logo">
+
+              </div>
+              <div class="navs">
+                  <div class="nav">
+                    <p>Home</p>
+                  </div>
+                  <div class="nav">
+                    <p>Latest</p>
+                  </div>
+                  <div class="nav">
+                    <p>Novels</p>
+                  </div>
+              </div>
+            </div>
+            <div class="middle-container">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <input type="text" placeholder="Search a series"  id="input">
+            </div>
+            <div class="right-container">
+                <button>Login</button>
+                <button>Sign Up</button>
+            </div>
+            <div class="Menu-bar">
+                <i class="fa-solid fa-bars"></i>
+             </div>
+             <div class="mobile-nav-container">
+                 <div class="mobile-nav">
+                    <div class="menus">
+                    <p>Home</p>
+                    </div>
+                    <div class="menus">
+                    <p>Latest</p>
+                    </div>
+                    <div class="menus">
+                    <p>Novels</p>
+                    </div>
+                 </div>
+             </div>
+         </div>
+        
+         <div class="novel-container">
+          
+         </div>
+     </div>
+     <script>
+     const novelList = [
+        {
+         id: 0,
+         novelImage: 'Novel-1.webp',
+         title: "Depths of the Otherwordly Labyrinth" ,
+         chapters: "62 Chapters",
+     } ,
+      {
+        id: 1,
+         novelImage: 'Novel-2.jpg',
+         title: "Ghost Story Club",
+         chapters: "36 Chapters" ,
+     }, 
+     {
+        id: 2,
+         novelImage: 'Novel-3.webp',
+         title: "Hunter Academy's Battle God",
+         chapters: "119 Chapters",
+     }, 
+     {
+        id: 3,
+         novelImage: 'Novel-4.webp',
+         title: "Hyper Luck",
+         chapters: "100 Chapters",
+     },
+      {
+        id: 4,
+         novelImage: 'Novel-5.webp',
+         title: "I'm Not a Regressor",
+         chapters: "199 Chapters",
+     },
+      {
+        id: 5,
+         novelImage: 'Novel-6.webp',
+         title: "Necromancer Academy's Genius Summoner",
+         chapters: "128 Chapter",
+     }, 
+     {
+        id: 6,
+         novelImage: 'Novel-7.webp',
+         title: "Omniscient First-Person's Viewpoint",
+         chapters: "24 Chapters",
+     },
+      {
+        id: 7,
+         novelImage: 'Novel-8.webp',
+         title: "Player Who Returned 10,000 Years Later",
+         chapters: "271 Chapters",
+     },
+      {
+        id: 8,
+         novelImage: 'Novel-9.webp',
+         title: "Regressor, Possesor, Reincarnator",
+         chapters: "50 Chapters",
+     }, 
+     {
+        id: 9,
+         novelImage: 'Novel-10.webp',
+         title: "Solo Swordmaster",
+         chapters: "70 Chapters",
+     }, 
+     {
+        id: 10,
+         novelImage: 'Novel-11.webp',
+         title: "Star-Slaying Swordsman",
+         chapters: "64 Chapters",
+     },
+      {
+        id: 11,
+         novelImage: 'Novel-12.webp',
+         title: "Swordmaster's Youngest Son",
+         chapters: "194 Chapters",
+     }, 
+     {
+        id: 12,
+         novelImage: 'Novel-13.webp',
+         title: "The Divine Hunter",
+         chapters: "442 Chapters",
+     }
+    ]
+    
+    const Novel = [...new Set(novelList.map((novelItems) => {return novelItems}))]
+
+       document.querySelector(".novel-container").innerHTML = Novel.map((novelList) => {
+        let {novelImage, title, chapters} = novelList;
+        return (
+           `
+           <div class="novel">
+                <div class="novel-image">
+                    <img src=${novelImage} alt="">
+                </div>
+                <div class="title">
+                    <p>${title}</p>
+                     <span>${chapters}</span>
+                </div>
+            </div>
+           `
+        )
+       }).join('');
+             
+         
+       let clicked = false;
+
+       document.querySelector(".Menu-bar").addEventListener("click", () => {
+        if(!clicked){
+            document.querySelector(".mobile-nav-container").style.width = "500px"
+        } else {
+            document.querySelector(".mobile-nav-container").style.width = "0"
+        }
+        clicked = !clicked;
+       })
+     </script>
+</body>
+</html>
